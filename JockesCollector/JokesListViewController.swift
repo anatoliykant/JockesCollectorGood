@@ -14,6 +14,8 @@ class JokesListViewController: UIViewController {
   
     let APIUrl = "http://www.umori.li/api/get"
     
+    var jokes:[Joke] = [Joke]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +34,7 @@ extension JokesListViewController {
         
         showIsBusy(true, animated: true)
         
-        // http://www.umori.li/api/get?site=bash.im&name=bash&num=100
+        // http://www.umori.li/api/get?site=bash.im&name=bash&num=2
         let params = ["site" : "bash.im",
                       "name" : "bash",
                       "num"  : 2]
@@ -42,7 +44,22 @@ extension JokesListViewController {
             
             self.showIsBusy(false, animated: true)
             print(responseJSON)
+            if let jokesToParse = responseJSON.result.value as? [NSDictionary] {
+                self.parseJokes(jokesToParse)
+            }
         }
+    }
+    
+    func parseJokes(jokes:[NSDictionary]?) {
+        var newJokes = [Joke]()
+        
+        for jokeInfo in jokes! {
+            if let parsedJoke = Joke(json: jokeInfo) {
+                newJokes.append(parsedJoke)
+            }
+        }
+        self.jokes.appendContentsOf(newJokes)
+        print(self.jokes)
     }
 }
 

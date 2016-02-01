@@ -13,6 +13,7 @@
 		4F111BC31C5FB62600262890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F111BC11C5FB62600262890 /* LaunchScreen.storyboard */; };
 		4F111BCB1C5FBBCA00262890 /* JokesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BCA1C5FBBCA00262890 /* JokesListViewController.swift */; };
 		4F111BCD1C5FC59C00262890 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BCC1C5FC59C00262890 /* MasterViewController.swift */; };
+		4F111BCF1C5FD5B600262890 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BCE1C5FD5B600262890 /* Joke.swift */; };
 		62684021555C136795E10CCE /* Pods_JockesCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6252EE93042E3DC3F0731967 /* Pods_JockesCollector.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		4F111BC41C5FB62600262890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F111BCA1C5FBBCA00262890 /* JokesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesListViewController.swift; sourceTree = "<group>"; };
 		4F111BCC1C5FC59C00262890 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		4F111BCE1C5FD5B600262890 /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		6252EE93042E3DC3F0731967 /* Pods_JockesCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JockesCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F7A2BF8EA83744CBE8797 /* Pods-JockesCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JockesCollector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JockesCollector/Pods-JockesCollector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +69,7 @@
 				4F111BBC1C5FB62600262890 /* Main.storyboard */,
 				4F111BCC1C5FC59C00262890 /* MasterViewController.swift */,
 				4F111BCA1C5FBBCA00262890 /* JokesListViewController.swift */,
+				4F111BCE1C5FD5B600262890 /* Joke.swift */,
 				4F111BBF1C5FB62600262890 /* Assets.xcassets */,
 				4F111BC11C5FB62600262890 /* LaunchScreen.storyboard */,
 				4F111BC41C5FB62600262890 /* Info.plist */,
@@ -215,6 +218,7 @@
 			files = (
 				4F111BB91C5FB62600262890 /* AppDelegate.swift in Sources */,
 				4F111BCB1C5FBBCA00262890 /* JokesListViewController.swift in Sources */,
+				4F111BCF1C5FD5B600262890 /* Joke.swift in Sources */,
 				4F111BCD1C5FC59C00262890 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
