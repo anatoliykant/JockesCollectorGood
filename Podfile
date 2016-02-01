@@ -7,6 +7,7 @@ target 'JockesCollector' do
 
 pod 'MBProgressHUD', '~> 0.9'
 pod 'RESideMenu', '~> 4.0'
+pod 'Alamofire', '~> 3.1'
 
 end
 
