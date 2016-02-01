@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		4F111BB91C5FB62600262890 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BB81C5FB62600262890 /* AppDelegate.swift */; };
-		4F111BBB1C5FB62600262890 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BBA1C5FB62600262890 /* ViewController.swift */; };
 		4F111BBE1C5FB62600262890 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F111BBC1C5FB62600262890 /* Main.storyboard */; };
 		4F111BC01C5FB62600262890 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F111BBF1C5FB62600262890 /* Assets.xcassets */; };
 		4F111BC31C5FB62600262890 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F111BC11C5FB62600262890 /* LaunchScreen.storyboard */; };
+		4F111BCB1C5FBBCA00262890 /* JokesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BCA1C5FBBCA00262890 /* JokesListViewController.swift */; };
+		4F111BCD1C5FC59C00262890 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BCC1C5FC59C00262890 /* MasterViewController.swift */; };
+		62684021555C136795E10CCE /* Pods_JockesCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6252EE93042E3DC3F0731967 /* Pods_JockesCollector.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		395E65DA413012B7E782DA39 /* Pods-JockesCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JockesCollector.release.xcconfig"; path = "Pods/Target Support Files/Pods-JockesCollector/Pods-JockesCollector.release.xcconfig"; sourceTree = "<group>"; };
 		4F111BB51C5FB62600262890 /* JockesCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JockesCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F111BB81C5FB62600262890 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F111BBA1C5FB62600262890 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F111BBD1C5FB62600262890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F111BBF1C5FB62600262890 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F111BC21C5FB62600262890 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F111BC41C5FB62600262890 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F111BCA1C5FBBCA00262890 /* JokesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokesListViewController.swift; sourceTree = "<group>"; };
+		4F111BCC1C5FC59C00262890 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		6252EE93042E3DC3F0731967 /* Pods_JockesCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JockesCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1F7A2BF8EA83744CBE8797 /* Pods-JockesCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JockesCollector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JockesCollector/Pods-JockesCollector.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62684021555C136795E10CCE /* Pods_JockesCollector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				4F111BB71C5FB62600262890 /* JockesCollector */,
 				4F111BB61C5FB62600262890 /* Products */,
+				52AC0175B0F10557A1E04EB1 /* Pods */,
+				FEF055F3E936944C730610B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +64,31 @@
 			isa = PBXGroup;
 			children = (
 				4F111BB81C5FB62600262890 /* AppDelegate.swift */,
-				4F111BBA1C5FB62600262890 /* ViewController.swift */,
 				4F111BBC1C5FB62600262890 /* Main.storyboard */,
+				4F111BCC1C5FC59C00262890 /* MasterViewController.swift */,
+				4F111BCA1C5FBBCA00262890 /* JokesListViewController.swift */,
 				4F111BBF1C5FB62600262890 /* Assets.xcassets */,
 				4F111BC11C5FB62600262890 /* LaunchScreen.storyboard */,
 				4F111BC41C5FB62600262890 /* Info.plist */,
 			);
 			path = JockesCollector;
+			sourceTree = "<group>";
+		};
+		52AC0175B0F10557A1E04EB1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF1F7A2BF8EA83744CBE8797 /* Pods-JockesCollector.debug.xcconfig */,
+				395E65DA413012B7E782DA39 /* Pods-JockesCollector.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FEF055F3E936944C730610B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6252EE93042E3DC3F0731967 /* Pods_JockesCollector.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F111BC71C5FB62600262890 /* Build configuration list for PBXNativeTarget "JockesCollector" */;
 			buildPhases = (
+				010F3851EAFCF1224701C6C6 /* Check Pods Manifest.lock */,
 				4F111BB11C5FB62600262890 /* Sources */,
 				4F111BB21C5FB62600262890 /* Frameworks */,
 				4F111BB31C5FB62600262890 /* Resources */,
+				8E45B51974F7C88117A9AC6D /* Embed Pods Frameworks */,
+				D6BEDC52AEFB050A9CD59EE3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +160,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		010F3851EAFCF1224701C6C6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8E45B51974F7C88117A9AC6D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JockesCollector/Pods-JockesCollector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6BEDC52AEFB050A9CD59EE3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JockesCollector/Pods-JockesCollector-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4F111BB11C5FB62600262890 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F111BBB1C5FB62600262890 /* ViewController.swift in Sources */,
 				4F111BB91C5FB62600262890 /* AppDelegate.swift in Sources */,
+				4F111BCB1C5FBBCA00262890 /* JokesListViewController.swift in Sources */,
+				4F111BCD1C5FC59C00262890 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +326,7 @@
 		};
 		4F111BC81C5FB62600262890 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF1F7A2BF8EA83744CBE8797 /* Pods-JockesCollector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JockesCollector/Info.plist;
@@ -258,6 +338,7 @@
 		};
 		4F111BC91C5FB62600262890 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 395E65DA413012B7E782DA39 /* Pods-JockesCollector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = JockesCollector/Info.plist;
@@ -286,6 +367,7 @@
 				4F111BC91C5FB62600262890 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
