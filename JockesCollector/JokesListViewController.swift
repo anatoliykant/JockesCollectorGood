@@ -13,18 +13,39 @@ import Alamofire
 class JokesListViewController: UIViewController {
   
     let APIUrl = "http://www.umori.li/api/get"
-    
+    @IBOutlet weak var tableView: UITableView!
+
     var jokes:[Joke] = [Joke]()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupTableView()
+        
+    }
+    
+    func setupTableView() {
+        tableView.delegate   = self
+        tableView.dataSource = self
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         getJokes()
+    }
+}
+
+extension JokesListViewController: UITableViewDataSource {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return jokes.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+    }
+    
+    func jokeAtIndex(index:NSIndexPath)->Joke {
+        
     }
 }
 
