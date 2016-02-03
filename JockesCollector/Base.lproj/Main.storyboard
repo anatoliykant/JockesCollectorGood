@@ -102,10 +102,47 @@
             </objects>
             <point key="canvasLocation" x="67" y="-838"/>
         </scene>
+        <!--Text View Controller-->
+        <scene sceneID="Vv5-ay-W4O">
+            <objects>
+                <viewController id="tbh-p1-HuS" customClass="TextViewController" customModule="JockesCollector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dMh-mh-xxg"/>
+                        <viewControllerLayoutGuide type="bottom" id="pnd-l1-pe5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8yK-gr-3rD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yRp-UC-Hrs">
+                                <rect key="frame" x="16" y="20" width="288" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pnd-l1-pe5" firstAttribute="top" secondItem="yRp-UC-Hrs" secondAttribute="bottom" id="0vS-hl-Lxe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yRp-UC-Hrs" secondAttribute="trailing" id="272-u6-1n3"/>
+                            <constraint firstItem="yRp-UC-Hrs" firstAttribute="top" secondItem="dMh-mh-xxg" secondAttribute="bottom" id="AhF-8h-43v"/>
+                            <constraint firstItem="yRp-UC-Hrs" firstAttribute="leading" secondItem="8yK-gr-3rD" secondAttribute="leadingMargin" id="jjd-OO-k21"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="textView" destination="yRp-UC-Hrs" id="Nfe-A7-bPQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6H-7S-JS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="945" y="-264"/>
+        </scene>
         <!--Jokes List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Center" id="BYZ-38-t0r" customClass="JokesListViewController" customModule="JockesCollector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="JokesListViewController" customModule="JockesCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -119,7 +156,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="ydg-cb-Zn9" detailTextLabel="k98-NQ-Hiu" style="IBUITableViewCellStyleSubtitle" id="z4t-oj-Bre">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4t-oj-Bre" id="ZcT-dp-Dw8">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -153,14 +190,16 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yf8-EL-ZrK" secondAttribute="bottom" id="u6r-B1-4jn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jbD-FY-GaM"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="yf8-EL-ZrK" id="slj-8W-8vA"/>
+                        <segue destination="tbh-p1-HuS" kind="show" identifier="Show Joke Detail" id="s7W-SP-bSL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67" y="-264"/>
+            <point key="canvasLocation" x="530" y="-264"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="WuJ-Qo-3ac">
@@ -204,6 +243,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7O-N9-q7B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="67" y="312"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qYO-wl-Kzo">
+            <objects>
+                <navigationController storyboardIdentifier="Center" automaticallyAdjustsScrollViewInsets="NO" id="HTG-pw-z4X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="757-fO-764">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="s6t-Qj-y5l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zub-Dl-qK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67" y="-264"/>
         </scene>
     </scenes>
 </document>
