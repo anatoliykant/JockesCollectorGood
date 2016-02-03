@@ -19,4 +19,20 @@ class MasterViewController: RESideMenu {
         super.awakeFromNib()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+    }
+    
+    
+    func setup() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "menuItemPressed:", name: "LeftMenuPressed", object: nil)
+    }
+    
+    func menuItemPressed(not:NSNotification) {
+        not.name //LeftMenuPressed
+        not.object //Название конкретного пункта меню
+        print(not)
+        hideMenuViewController()
+    }
 }
