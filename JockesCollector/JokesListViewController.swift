@@ -41,12 +41,21 @@ extension JokesListViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+        let aJoke = jokeAtIndex(indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        cell.textLabel?.text = aJoke.htmlText
+        cell.detailTextLabel?.text = aJoke.sourceSite
+        return cell
     }
     
     func jokeAtIndex(index:NSIndexPath)->Joke {
-        
+            let aJoke = jokes[index.row]
+            return aJoke
     }
+}
+
+extension JokesListViewController: UITableViewDelegate {
+    
 }
 
 //MARK: - REST -
@@ -58,7 +67,7 @@ extension JokesListViewController {
         // http://www.umori.li/api/get?site=bash.im&name=bash&num=2
         let params = ["site" : "bash.im",
                       "name" : "bash",
-                      "num"  : 2]
+                      "num"  : 100]
         
         Alamofire.request(.GET, APIUrl, parameters: params, encoding: .URL, headers: nil)
         .responseJSON { (responseJSON) -> Void in
@@ -81,6 +90,7 @@ extension JokesListViewController {
         }
         self.jokes.appendContentsOf(newJokes)
         print(self.jokes)
+        tableView.reloadData()
     }
 }
 
