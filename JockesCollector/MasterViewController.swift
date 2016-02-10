@@ -44,7 +44,7 @@ class MasterViewController: RESideMenu {
         let siteName: String?
         
         switch(name){
-            case "it-happense":
+        case "it-happense":
             site = "ithappens.me"
             siteName = "ithappens"
             

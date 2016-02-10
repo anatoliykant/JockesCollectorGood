@@ -15,12 +15,15 @@ class LeftMenuViewController: UITableViewController {
 
         // Do any additional setup after loading the view.
     }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         //взять ячейку с нажатым индексом
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
+        
         //вычленим у нее текст
         let objectToSend = selectedCell?.textLabel?.text
+        
         //пошлем уведомление с названием и текстом
         NSNotificationCenter.defaultCenter().postNotificationName("LeftMenuPressed", object: objectToSend)
     }

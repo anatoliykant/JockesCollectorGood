@@ -22,7 +22,22 @@ class Joke: NSObject {
         htmlText = pureHTML
         sourceSite = siteName
     }
+}
+
+class LeftSite: NSObject {
     
+    var htmlSite:String!
+    var urlSite:String!
+    
+    init?(json:NSDictionary){
+        super.init()
+        guard let siteName = json["name"] as? String,
+            let urlName = json["url"] as? String else {
+                return nil
+        }
+        htmlSite = siteName
+        urlSite = urlName
+    }
 }
 
 

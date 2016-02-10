@@ -17,13 +17,11 @@ class JokesListViewController: UIViewController {
 
     var jokes:[Joke] = [Joke]()
     var site:String = "bash.im"
-    
     var siteName = "bash"
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         setupTableView()
-        
     }
     
     func setupTableView() {
@@ -58,11 +56,13 @@ class JokesListViewController: UIViewController {
     }
 }
 
+//    возвращает количество строк соответсвующих количеству шуток с сайта?
 extension JokesListViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return jokes.count
     }
     
+    //    заносит текст шутки и название сайта в каждую строчку(ячейку tableView) списка шуток и возвращает эту ячейку
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let aJoke = jokeAtIndex(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
@@ -71,6 +71,7 @@ extension JokesListViewController: UITableViewDataSource {
         return cell
     }
     
+    //минифункция возвращает строку по индексу из распарсенного массива данных с сайта 
     func jokeAtIndex(index:NSIndexPath)->Joke {
             let aJoke = jokes[index.row]
             return aJoke
@@ -121,6 +122,7 @@ extension JokesListViewController {
     }
 }
 
+//Расширение отображающее анимацию (лепестки) загрузки данных
 extension UIViewController {
     func showIsBusy(busy:Bool, animated:Bool){
         if busy {
@@ -131,7 +133,10 @@ extension UIViewController {
     }
 }
 
-extension String {
+
+
+extension String { //зачем расширение для String (проверка на кодировку и исправление ее)
+    // функция распарсивания массив данных с сайта?
     func parseFromHTML() -> NSAttributedString? {
         
         guard let data = self.dataUsingEncoding(NSUnicodeStringEncoding) else {
