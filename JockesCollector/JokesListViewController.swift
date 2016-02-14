@@ -62,7 +62,7 @@ extension JokesListViewController: UITableViewDataSource {
         return jokes.count
     }
     
-    //    заносит текст шутки и название сайта в каждую строчку(ячейку tableView) списка шуток и возвращает эту ячейку
+    //    заносит текст шутки и название сайта в каждую ячейку tableView списка шуток и возвращает эту ячейку
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let aJoke = jokeAtIndex(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)

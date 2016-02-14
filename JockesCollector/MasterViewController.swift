@@ -34,11 +34,13 @@ class MasterViewController: RESideMenu {
         not.object //Название конкретного пункта меню
         print(not)
         
-        hideMenuViewController()
+        hideMenuViewController()//скрывает левое меню при выборе одного из пунктов
         showJokesForMenuItem(not.object as! String)
         
     }
     
+    
+    //написать новую функцию, в которой на вход подается кроме названия 
     func showJokesForMenuItem(name:String){
         let site: String?
         let siteName: String?
@@ -51,6 +53,10 @@ class MasterViewController: RESideMenu {
         case "Bash":
             site = "bash.im"
             siteName = "bash"
+            
+        case "NEW":
+            site = "zadolba.li"
+            siteName = "zadolbali"
         default: return
         }
         //создадим в сторибоард центральный вьюконтроллер и приведем его к типу NavigationController 
