@@ -46,6 +46,7 @@ class LeftMenuViewController: UITableViewController {
     }
 }
 
+/*
 //MARK: - REST -
 extension LeftMenuViewController {
     func getJokes() {
@@ -102,4 +103,4 @@ extension String { //зачем расширение для String (провер
         return parsedHTML
     }
 }
-
+*/
