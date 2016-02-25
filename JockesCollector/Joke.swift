@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class Joke: NSObject {
     
@@ -24,22 +25,19 @@ class Joke: NSObject {
     }
 }
 
-class LeftSite: NSObject {
+
+class JokesModel: NSObject {
+    let name: String
+    let jokeURL: String
     
-    var htmlSite:String!
-    var urlSite:String!
+    override var description: String {
+        return "Name: \(name), URL: \(jokeURL)\n"
+    }
     
-    init?(json:NSDictionary){
-        super.init()
-        guard let siteName = json["name"] as? String,
-            let urlName = json["url"] as? String else {
-                return nil
-        }
-        htmlSite = siteName
-        urlSite = urlName
+    init(name: String?, jokeURL: String?) {
+        self.name = name ?? ""
+        self.jokeURL = jokeURL ?? ""
     }
 }
-
-
 
 

@@ -101,7 +101,7 @@ extension JokesListViewController {
         .responseJSON { (responseJSON) -> Void in
             
             self.showIsBusy(false, animated: true)
-            print(responseJSON)
+            //print(responseJSON)
             if let jokesToParse = responseJSON.result.value as? [NSDictionary] {
                 self.parseJokes(jokesToParse)
             }
@@ -117,7 +117,7 @@ extension JokesListViewController {
             }
         }
         self.jokes.appendContentsOf(newJokes)
-        print(self.jokes)
+        //print(self.jokes)
         tableView.reloadData()
     }
 }
@@ -133,9 +133,7 @@ extension UIViewController {
     }
 }
 
-
-
-extension String { //зачем расширение для String (проверка на кодировку и исправление ее)
+extension String { //зачем расширение для String (проверка на кодировку и ее исправление)
     // функция распарсивания массив данных с сайта?
     func parseFromHTML() -> NSAttributedString? {
         

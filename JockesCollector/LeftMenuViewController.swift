@@ -8,19 +8,63 @@
 
 import UIKit
 
+
+
 class LeftMenuViewController: UITableViewController {
 
+    @IBOutlet var tableViewLeft: UITableView!
     var TableArray = [String]()
-    
+    //var jokes = [JokesModel]()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        TableArray = ["Bash","it-happense","NEW"]//занести сюда name сайтов, для этого надо снала распарсить API
-
         
+        // Получение списка сайтов с шутками из json (http://www.umori.li/api/sources)
+        DataManager.getSiteNameFromJokesWithSuccess { (jokesData) -> Void in
+            let json = JSON(data: jokesData)//заносим данные с сайта .../sources в константу json
+            if let jokeSiteName = json[0][0]["name"].string { //заносим в константу jokeSiteName имя первого сайта из полученных данных
+                print("NSURLSession: \(jokeSiteName)")//выводим имя сайта в консоль
+            }
+            //1 присваиваем константе appArray массив данных с сайта .../sources
+            if let appArray = json[].array {
+                //2 создаем изменяемый массив для хранения объектов, которые будут созданы
+                //var jokes = [JokesModel]()
+                var jokesSiteName = [String]()
+                
+                //3 перебираем все элементы и создаем AppModel из данных JSON.
+                for appDict in appArray {
+                    for jokeDict in 0..<appDict.count {
+                        let appName: String? = appDict[jokeDict]["name"].string
+                        //let appURL: String? = appDict[jokeDict]["url"].string
+                        
+                        jokesSiteName.append(appName!)
+                        //let joke = JokesModel(name: appName, jokeURL: appURL)
+                        //self.jokes.append(joke)
+                    }
+                    
+                }
+                
+                //4  вывод на консоль
+                print(jokesSiteName) //только названия сайтов
+                print(jokesSiteName.count)
+                
+                //print(self.jokes) // названия и urk сайтов
+                //print(jokes.count)
+                
+                //Занесение списка сайтов в массив TableArray и перезагрузка списка в левом меню
+                NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                    
+                    self.TableArray = jokesSiteName
+                    self.tableViewLeft.reloadData()
+                })
+            }
+        }
     }
     
+    
+    
     // вовзращает кол-во строк в TableView = кол-во элементов массива TableArray
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {        
         return TableArray.count
     }
     
@@ -46,61 +90,5 @@ class LeftMenuViewController: UITableViewController {
     }
 }
 
-/*
-//MARK: - REST -
-extension LeftMenuViewController {
-    func getJokes() {
-        
-        //showIsBusy(true, animated: true)
-        
-        // http://www.umori.li/api/sources
-        let params = ["site" : site,
-                      "name" : siteName,
-                      "num"  : 100]
-        
-        Alamofire.request(.GET, APIUrl, parameters: params as? [String : AnyObject], encoding: .URL, headers: nil)
-            .responseJSON { (responseJSON) -> Void in
-                
-                self.showIsBusy(false, animated: true)
-                print(responseJSON)
-                if let jokesToParse = responseJSON.result.value as? [NSDictionary] {
-                    self.parseJokes(jokesToParse)
-                }
-        }
-    }
-    
-    func parseJokes(jokes:[NSDictionary]?) {
-        var newJokes = [Joke]()
-        
-        for jokeInfo in jokes! {
-            if let parsedJoke = Joke(json: jokeInfo) {
-                newJokes.append(parsedJoke)
-            }
-        }
-        self.jokes.appendContentsOf(newJokes)
-        print(self.jokes)
-        tableView.reloadData()
-    }
-}
 
 
-
-
-extension String { //зачем расширение для String (проверка на кодировку и исправление ее)
-    // функция распарсивания массив данных с сайта?
-    func parseFromHTML() -> NSAttributedString? {
-        
-        guard let data = self.dataUsingEncoding(NSUnicodeStringEncoding) else {
-            return nil
-        }
-        
-        let options = [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType]
-        
-        let parsedHTML = try? NSAttributedString(data: data,
-            options: options,
-            documentAttributes: nil)
-        
-        return parsedHTML
-    }
-}
-*/

@@ -15,6 +15,8 @@
 		4F111BCD1C5FC59C00262890 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BCC1C5FC59C00262890 /* MasterViewController.swift */; };
 		4F111BCF1C5FD5B600262890 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F111BCE1C5FD5B600262890 /* Joke.swift */; };
 		62684021555C136795E10CCE /* Pods_JockesCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6252EE93042E3DC3F0731967 /* Pods_JockesCollector.framework */; };
+		F54EFC7A1C7CBD400079FDB8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54EFC791C7CBD400079FDB8 /* SwiftyJSON.swift */; };
+		F57B4D251C7CD10500A9F8D7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57B4D241C7CD10500A9F8D7 /* DataManager.swift */; };
 		F5954DC81C62651E0025C8E1 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5954DC71C62651E0025C8E1 /* TextViewController.swift */; };
 		F5954DCC1C62769B0025C8E1 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5954DCB1C62769B0025C8E1 /* LeftMenuViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +34,8 @@
 		4F111BCE1C5FD5B600262890 /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		6252EE93042E3DC3F0731967 /* Pods_JockesCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JockesCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F7A2BF8EA83744CBE8797 /* Pods-JockesCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JockesCollector.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JockesCollector/Pods-JockesCollector.debug.xcconfig"; sourceTree = "<group>"; };
+		F54EFC791C7CBD400079FDB8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
+		F57B4D241C7CD10500A9F8D7 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; usesTabs = 0; };
 		F5954DC71C62651E0025C8E1 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		F5954DCB1C62769B0025C8E1 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,16 +73,16 @@
 		4F111BB71C5FB62600262890 /* JockesCollector */ = {
 			isa = PBXGroup;
 			children = (
+				F54EFC781C7CBCF00079FDB8 /* Storyboards */,
+				F54EFC771C7CBCD60079FDB8 /* Others */,
+				F57B4D241C7CD10500A9F8D7 /* DataManager.swift */,
+				F54EFC791C7CBD400079FDB8 /* SwiftyJSON.swift */,
 				4F111BB81C5FB62600262890 /* AppDelegate.swift */,
-				4F111BBC1C5FB62600262890 /* Main.storyboard */,
-				F5954DC71C62651E0025C8E1 /* TextViewController.swift */,
-				4F111BCC1C5FC59C00262890 /* MasterViewController.swift */,
-				4F111BCA1C5FBBCA00262890 /* JokesListViewController.swift */,
 				4F111BCE1C5FD5B600262890 /* Joke.swift */,
-				4F111BBF1C5FB62600262890 /* Assets.xcassets */,
-				4F111BC11C5FB62600262890 /* LaunchScreen.storyboard */,
-				4F111BC41C5FB62600262890 /* Info.plist */,
+				4F111BCA1C5FBBCA00262890 /* JokesListViewController.swift */,
 				F5954DCB1C62769B0025C8E1 /* LeftMenuViewController.swift */,
+				4F111BCC1C5FC59C00262890 /* MasterViewController.swift */,
+				F5954DC71C62651E0025C8E1 /* TextViewController.swift */,
 			);
 			path = JockesCollector;
 			sourceTree = "<group>";
@@ -90,6 +94,24 @@
 				395E65DA413012B7E782DA39 /* Pods-JockesCollector.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F54EFC771C7CBCD60079FDB8 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				4F111BBF1C5FB62600262890 /* Assets.xcassets */,
+				4F111BC41C5FB62600262890 /* Info.plist */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		F54EFC781C7CBCF00079FDB8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4F111BBC1C5FB62600262890 /* Main.storyboard */,
+				4F111BC11C5FB62600262890 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		FEF055F3E936944C730610B1 /* Frameworks */ = {
@@ -227,6 +249,8 @@
 				F5954DCC1C62769B0025C8E1 /* LeftMenuViewController.swift in Sources */,
 				4F111BCB1C5FBBCA00262890 /* JokesListViewController.swift in Sources */,
 				4F111BCF1C5FD5B600262890 /* Joke.swift in Sources */,
+				F57B4D251C7CD10500A9F8D7 /* DataManager.swift in Sources */,
+				F54EFC7A1C7CBD400079FDB8 /* SwiftyJSON.swift in Sources */,
 				4F111BCD1C5FC59C00262890 /* MasterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
