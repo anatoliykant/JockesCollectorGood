@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class LeftMenuViewController: UITableViewController {
 
     @IBOutlet var tableViewLeft: UITableView!

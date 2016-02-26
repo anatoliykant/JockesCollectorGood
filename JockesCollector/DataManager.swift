@@ -7,7 +7,6 @@
 //
 
 
-//import UIKit
 import Foundation
 
 let jokesURL = "http://www.umori.li/api/sources"
