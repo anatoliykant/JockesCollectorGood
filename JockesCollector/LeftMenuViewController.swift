@@ -19,7 +19,7 @@ class LeftMenuViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Получение списка сайтов с шутками из json (http://www.umori.li/api/sources)
+        // Получение списка сайтов с шутками из json ( http://www.umori.li/api/sources )
         DataManager.getSiteNameFromJokesWithSuccess { (jokesData) -> Void in
             let json = JSON(data: jokesData)//заносим данные с сайта .../sources в константу json
             if let jokeSiteName = json[0][0]["name"].string { //заносим в константу jokeSiteName имя первого сайта из полученных данных
