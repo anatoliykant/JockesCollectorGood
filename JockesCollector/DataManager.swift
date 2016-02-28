@@ -10,6 +10,7 @@
 import Foundation
 
 let jokesURL = "http://www.umori.li/api/sources"
+let randomJokesURL = "http://www.umori.li/api/random?num=10"
 
 class DataManager {
     
@@ -17,6 +18,17 @@ class DataManager {
     class func getSiteNameFromJokesWithSuccess(success: ((jokesData: NSData!) -> Void)) {
         //1  вызов метода loadDataFromURL, который принимает URL и замыкание, которое передает объект NSData
         loadDataFromURL(NSURL(string: jokesURL)!, completion:{(data, error) -> Void in
+            //2 проверяете существование значения, используя опциональную привязку
+            if let urlData = data {
+                //3 передаем данные в замыкание success
+                success(jokesData: urlData)
+            }
+        })
+    }
+    
+    class func getRandomJokesFromOthersSiteWithSuccess(success: ((jokesData: NSData!) -> Void)) {
+        //1  вызов метода loadDataFromURL, который принимает URL и замыкание, которое передает объект NSData
+        loadDataFromURL(NSURL(string: randomJokesURL)!, completion:{(data, error) -> Void in
             //2 проверяете существование значения, используя опциональную привязку
             if let urlData = data {
                 //3 передаем данные в замыкание success

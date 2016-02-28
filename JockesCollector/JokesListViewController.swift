@@ -92,20 +92,42 @@ extension JokesListViewController {
         
         showIsBusy(true, animated: true)
         
-        // http://www.umori.li/api/get?site=bash.im&name=bash&num=2
-        let params = ["site" : site,
-                      "name" : siteName,
-                      "num"  : 100]
-        
-        Alamofire.request(.GET, APIUrl, parameters: params as? [String : AnyObject], encoding: .URL, headers: nil)
-        .responseJSON { (responseJSON) -> Void in
+        if site == "http://www.umori.li/api/random?num=10"
+        {
+            print("http://www.umori.li/api/random?num=10")
             
-            self.showIsBusy(false, animated: true)
-            //print(responseJSON)
-            if let jokesToParse = responseJSON.result.value as? [NSDictionary] {
-                self.parseJokes(jokesToParse)
+            
+            Alamofire.request(.GET, "http://www.umori.li/api/random?num=10")
+                .responseJSON { (response) -> Void in
+                    
+                    
+                    self.showIsBusy(false, animated: true)
+                    if let JSON = response.result.value as? [NSDictionary] {
+                        self.parseJokes(JSON)
+                    }
             }
+            
+            
+        } else {
+        
+                    // http://www.umori.li/api/get?site=bash.im&name=bash&num=2
+                    let params = ["site" : site,
+                                  "name" : siteName,
+                                  "num"  : 100]
+                    
+                    //написать здесь функцию if siteName == http://www.umori.li/api/random?num=10, то использовать метод DataManager.getRandomJokesFromOthersSiteWithSuccess else <текст ниже - Alamofire.request>
+                    
+                    Alamofire.request(.GET, APIUrl, parameters: params as? [String : AnyObject], encoding: .URL, headers: nil)
+                    .responseJSON { (responseJSON) -> Void in
+                        
+                        self.showIsBusy(false, animated: true)
+                        //print(responseJSON)
+                        if let jokesToParse = responseJSON.result.value as? [NSDictionary] {
+                            self.parseJokes(jokesToParse)
+                        }
+                    }
         }
+        
     }
     
     func parseJokes(jokes:[NSDictionary]?) {

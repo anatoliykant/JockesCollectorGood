@@ -21,7 +21,7 @@ class LeftMenuViewController: UITableViewController {
         DataManager.getSiteNameFromJokesWithSuccess { (jokesData) -> Void in
             let json = JSON(data: jokesData)//заносим данные с сайта .../sources в константу json
             if let jokeSiteName = json[0][0]["name"].string { //заносим в константу jokeSiteName имя первого сайта из полученных данных
-                print("NSURLSession: \(jokeSiteName)")//выводим имя сайта в консоль
+                //print("NSURLSession: \(jokeSiteName)")//выводим имя сайта в консоль
             }
             //1 присваиваем константе appArray массив данных с сайта .../sources
             if let appArray = json[].array {
@@ -37,16 +37,19 @@ class LeftMenuViewController: UITableViewController {
                         
                         jokesSiteName.append(appName!)
                         //let joke = JokesModel(name: appName, jokeURL: appURL)
-                        //self.jokes.append(joke)
+                        //jokes.append(joke)
                     }
                     
                 }
                 
+                jokesSiteName.append("Random")
                 //4  вывод на консоль
-                print(jokesSiteName) //только названия сайтов
-                print(jokesSiteName.count)
+                //print(jokesSiteName) //только названия сайтов
+                //print(jokesSiteName.count)
                 
-                //print(self.jokes) // названия и urk сайтов
+                //let str = jokes.rawString()
+                
+                //print(jokes) // названия и urk сайтов
                 //print(jokes.count)
                 
                 //Занесение списка сайтов в массив TableArray и перезагрузка списка в левом меню
