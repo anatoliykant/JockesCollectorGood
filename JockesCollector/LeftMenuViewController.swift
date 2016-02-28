@@ -20,37 +20,28 @@ class LeftMenuViewController: UITableViewController {
         // Получение списка сайтов с шутками из json ( http://www.umori.li/api/sources )
         DataManager.getSiteNameFromJokesWithSuccess { (jokesData) -> Void in
             let json = JSON(data: jokesData)//заносим данные с сайта .../sources в константу json
-            if let jokeSiteName = json[0][0]["name"].string { //заносим в константу jokeSiteName имя первого сайта из полученных данных
-                //print("NSURLSession: \(jokeSiteName)")//выводим имя сайта в консоль
-            }
-            //1 присваиваем константе appArray массив данных с сайта .../sources
-            if let appArray = json[].array {
+            
+            //1 присваиваем константе jokeArray массив данных с сайта .../sources
+            if let jokeArray = json[].array {
                 //2 создаем изменяемый массив для хранения объектов, которые будут созданы
                 //var jokes = [JokesModel]()
                 var jokesSiteName = [String]()
                 
                 //3 перебираем все элементы и создаем AppModel из данных JSON.
-                for appDict in appArray {
+                for appDict in jokeArray {
                     for jokeDict in 0..<appDict.count {
-                        let appName: String? = appDict[jokeDict]["name"].string
+                        let jokeSiteName: String? = appDict[jokeDict]["name"].string
                         //let appURL: String? = appDict[jokeDict]["url"].string
                         
-                        jokesSiteName.append(appName!)
+                        jokesSiteName.append(jokeSiteName!)
                         //let joke = JokesModel(name: appName, jokeURL: appURL)
                         //jokes.append(joke)
                     }
                     
                 }
                 
-                jokesSiteName.append("Random")
-                //4  вывод на консоль
-                //print(jokesSiteName) //только названия сайтов
-                //print(jokesSiteName.count)
+                jokesSiteName.append("Random")//добавляем в название для сайта http://www.umori.li/api/random?num=10
                 
-                //let str = jokes.rawString()
-                
-                //print(jokes) // названия и urk сайтов
-                //print(jokes.count)
                 
                 //Занесение списка сайтов в массив TableArray и перезагрузка списка в левом меню
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in

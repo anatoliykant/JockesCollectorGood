@@ -25,7 +25,7 @@ class Joke: NSObject {
     }
 }
 
-
+//класс для распарсивания списка имен и ссылок на сайты с ресурса http://www.umori.li/api/sources 
 class JokesModel: NSObject {
     let name: String
     let jokeURL: String
